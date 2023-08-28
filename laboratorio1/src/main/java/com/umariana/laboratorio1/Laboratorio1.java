@@ -82,6 +82,7 @@ public class Laboratorio1 {
                     modificarAlumnos(misAlumnos, lector);
                      break;
                     }
+                    //caososososo
                     case 4 -> {
                         System.out.println("Ah elegido la opcion de ver alumno individual");
                           System.out.println("------------------------------------------");
