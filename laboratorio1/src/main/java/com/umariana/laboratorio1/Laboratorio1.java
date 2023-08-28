@@ -129,7 +129,7 @@ public class Laboratorio1 {
      * @param lector 
      */
     //eliminarAlumnos
-    
+    //eliminarrrrrrrr alumnossss
     public static void eliminarAlumnos (ArrayList<Alumno>misAlumnos,Scanner lector) {
         
         System.out.println("Ingrese la C.C del alumno que desea eliminar");
