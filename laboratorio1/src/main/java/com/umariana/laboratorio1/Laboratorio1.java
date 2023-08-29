@@ -36,6 +36,7 @@ public class Laboratorio1 {
             // se crea el array en el que se guardara cada dato
             
             ArrayList<Alumno>misAlumnos = new ArrayList<>();
+            
               lecturaArchivo(misAlumnos);
            
             //Utilizamos un do-while para que el menu se repita hasta que el usuario lo termine 
@@ -92,7 +93,7 @@ public class Laboratorio1 {
                          break;
                         
                     }
-                    case 3 -> {
+                    case 7 -> {
                         
                         System.out.println("Ah elegido la opcion de El programa ha terminado:) ");
                           System.out.println("------------------------------------------");
@@ -106,11 +107,12 @@ public class Laboratorio1 {
                     verListaAlumnos(misAlumnos); 
                      break;
                     }
-                     case 7  -> {  System.out.println("Ah elegido la opcion de eliminar lista de alumnos");
+                     case 3  -> {  System.out.println("Ah elegido la opcion de eliminar lista de alumnos");
                       System.out.println("------------------------------------------");
                     //llamamos a la funcion  eliminarAlumnos
+                   eliminarListaAlumnos(misAlumnos); 
                     lecturaArchivo(misAlumnos);
-                    eliminarAlumnos(misAlumnos); 
+                   
                      break;
                     }
                     default -> 
@@ -301,8 +303,7 @@ public class Laboratorio1 {
                 System.out.println("Digite el nuevo semestre");
                 
                String semestreModificado = lector.next();
-                estudiante.setSemestre(semestreModificado);
-                
+                estudiante.setSemestre(semestreModificado);               
             }
             
             System.out.println("alumno modificado exitosamente :) ");
@@ -342,8 +343,10 @@ public class Laboratorio1 {
             String alumnosDigitados = alumno.getCedula()+" ,"+alumno.getNombre() + " ," +alumno.getApellido()
             + " ," + alumno.getCorreo()+ " ," + alumno.getCelular() + " ," + alumno.getSemestre(); 
           
+            
             pluma.println(alumnosDigitados);
            
+            
         }
         
           pluma.close();
@@ -373,8 +376,15 @@ public class Laboratorio1 {
        lector.close();
     }
     
-    public static void eliminarAlumnos (ArrayList<Alumno>misAlumnos) {
-        misAlumnos.clear();
-        System.out.println("se borraron");
+    public static void eliminarListaAlumnos (ArrayList<Alumno>misAlumnos) {
+        if (!misAlumnos.isEmpty()) {
+            
+              misAlumnos.clear();
+        System.out.println("Los alumnos se han borrado exitosamente");
+        
+        } else {
+            System.out.println("La lista de estudiantes se encuentra vacia");
+        }
+      
     }
 }
